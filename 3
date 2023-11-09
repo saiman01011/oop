@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+class Transport {
+public:
+    int PriceHour=0,Hour=0;
+    std::string nam;
+    void getPriceHour(int a) {
+        PriceHour = a;
+    }
+    void getHour(int a) {
+        Hour = a;
+    }
+};
+class LeTran:public Transport {
+public:
+    int KomAvto = 0;
+    bool services = false;
+    LeTran() {
+        nam = "LeTran";
+    }
+
+    void getKom(int a) {
+        KomAvto = a;
+    }
+    void getServices(bool a) {
+        services = a;
+    }
+    int sumAvto() {
+        int a =PriceHour*Hour/100*KomAvto;
+        if (services) {
+            std::cout << "цена за час " << PriceHour<< std::endl;
+            std::cout << "время пользования " << Hour << std::endl;
+            std::cout << "комплектация автомобиля " << KomAvto <<"%" << std::endl;
+            std::cout << " дополнительные услуги 1000 "<<std::endl;
+            return a + 1000;
+        }
+        std::cout << "цена за час " << PriceHour << std::endl;
+        std::cout << "время пользование " << Hour << std::endl;
+        std::cout << "комплектация автомобиля " << KomAvto << std::endl;
+        return a;
+    }
+};
+
+int main()
+{
+    using namespace std;
+    setlocale(LC_ALL, "Russian");
+    LeTran a;
+    int x;
+    cin >> x;
+    a.getPriceHour(600);
+    a.getHour(5);
+    a.getKom(120);
+    a.getServices(true);
+    cout<< a.sumAvto()<<"p";
+}
