@@ -1,0 +1,22 @@
+#include <iostream>
+class Kyb {
+public:
+    int x=0;
+    void KybSo(int x) {
+        this->x = x;
+    }
+    int KybVolume() {
+        return x * x * x;
+    }
+};
+int main()
+{
+    using namespace std;
+    setlocale(LC_ALL, "Russian");
+    Kyb k;
+    int x;
+    cin >> x;
+    k.KybSo(x);
+    cout << "объем куба " << k.KybVolume();
+
+}
