@@ -1,0 +1,32 @@
+#include <iostream>
+class Сircle {
+private:
+    double radi = 0;
+    double Pi = 3.1415926535;
+public:
+    void СircleRadi(double x) {
+        radi = x;
+    }
+    double getRadi() {
+        return radi;
+    }
+    double CirPerimeter() {
+        return 2 * Pi * radi;
+    }
+    double CirSq() {
+        return Pi * radi*radi;
+    }
+};
+int main()
+{
+    using namespace std;
+    setlocale(LC_ALL, "Russian");
+    Сircle c;
+    int x;
+    cin >> x;
+    c.СircleRadi(x);
+    cout << "периметор круга " << c.CirPerimeter()<<endl;
+
+    cout << "площадь круга " << c.CirSq();
+
+}
